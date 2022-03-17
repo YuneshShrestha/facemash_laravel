@@ -23,7 +23,7 @@ class ImageController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.upload');
     }
 
     /**
@@ -32,10 +32,10 @@ class ImageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    // public function store(Request $request)
+    // {
+    //     return 'Hello';
+    // }
 
     /**
      * Display the specified resource.
@@ -45,7 +45,7 @@ class ImageController extends Controller
      */
     public function show($id)
     {
-        //
+        return 'Hello';
     }
 
     /**
@@ -68,7 +68,7 @@ class ImageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return 'Update';
     }
 
     /**

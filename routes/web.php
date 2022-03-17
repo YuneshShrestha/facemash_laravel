@@ -1,6 +1,10 @@
 <?php
 
 // use App\Models\Image;
+
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\PostImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +21,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.main');
 });
-Route::resource('images', 'ImageController');
-Route::resource('game', 'GameController');
+Route::post('/upload', [PostImageController::class, 'upload']);
+Route::resource('/images', ImageController::class);
+Route::resource('/game', GameController::class);

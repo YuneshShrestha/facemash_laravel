@@ -20,13 +20,19 @@
         .navbar{
             background-color: #03045E;
         }
+        .center{
+          width: 100%;
+          min-height: 80vh;
+          display: grid;
+          place-items: center;
+        }
     </style>
   </head>
   <body>
     {{-- NavBar --}}
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/">
               <h4>Facemash</h4>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +46,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="#">Check Stats</a></li>
-                  <li><a class="dropdown-item" href="#">Upload Images</a></li>
+                  <li><a class="dropdown-item" href="/images/create">Upload Images</a></li>
                   <li><a class="dropdown-item" href="#">Invite Friends</a></li>
                 </ul>
               </li>
