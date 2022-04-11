@@ -98,4 +98,8 @@ class ImageController extends Controller
     {
         //
     }
+    public function checkStats(){
+        $image = Image::orderBy('rank','desc')->get();
+        return view('pages.check_stats',compact('image'));
+    }
 }

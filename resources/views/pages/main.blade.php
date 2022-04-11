@@ -16,7 +16,7 @@
                         <div class="col-md-6">
                             <p class="player1_id d-none">{{ $image1->id }}</p>
                             <p style="font-size: 18px;">{{ $image1->title }}</p>
-                            <p class="text-secondary">Score:{{ $image1->score }}</p>
+                            <p class="text-secondary">Score: {{ $image1->score }}</p>
                         </div>
                         <div class="col-md-6">
                             <button type="submit" style="background-color: transparent; float:right; border:none;" class="like1">
@@ -35,7 +35,7 @@
                         <div class="col-md-6">
                             <p class="player2_id d-none">{{ $image2->id }}</p>
                             <p style="font-size: 18px;">{{ $image2->title }}</p>
-                            <p class="text-secondary">Score:{{ $image2->score }}</p>
+                            <p class="text-secondary">Score: {{ $image2->score }}</p>
                             
                         </div>
                         <div class="col-md-6">

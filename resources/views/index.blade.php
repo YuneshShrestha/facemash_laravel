@@ -55,9 +55,9 @@
                 Settings
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Check Stats</a></li>
+                  <li><a class="dropdown-item" href="/check_stats">Check Stats</a></li>
                   <li><a class="dropdown-item" href="/images/create">Upload Images</a></li>
-                  <li><a class="dropdown-item" href="#">Invite Friends</a></li>
+                  {{-- <li><a class="dropdown-item" href="#">Invite Friends</a></li> --}}
                 </ul>
               </li>
             </ul>

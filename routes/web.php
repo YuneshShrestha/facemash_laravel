@@ -23,5 +23,6 @@ Route::get('/', [ImageController::class,'index']);
 Route::post('/upload', [PostImageController::class, 'upload']);
 Route::match(['put', 'patch'], '/gameUpdate',[PostImageController::class, 'gameUpdate']);
 // Route::put('', );
+Route::get('/check_stats', [ImageController::class, 'checkStats']);
 Route::resource('/images', ImageController::class);
 Route::resource('/game', GameController::class);
