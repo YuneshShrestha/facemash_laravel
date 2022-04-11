@@ -18,6 +18,9 @@
             font-family: 'Comfortaa', cursive;
             /* font-size: 80%; */
         }
+        .display_none{
+            display: none;
+        }
         .navbar{
             background-color: white;
             min-height: 15vh;
@@ -68,8 +71,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function(){
-          $('.player1').css('display', 'none');
-          $('.player2').css('display', 'none');
           $('.player1').fadeIn(300);
           $('.player2').fadeIn(300);
          

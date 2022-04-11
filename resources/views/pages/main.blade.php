@@ -5,7 +5,7 @@
         @csrf
         <div class="row vertical-center">
             <div class="col-md-6">
-                <div class="card player1">
+                <div class="card player1 display_none">
                     <div style="width: 100%; min-height: 55vh; background-image: url('{{ asset($image1->filename) }}'); background-size:cover;"></div>
                     
                     <div class="card-body">
@@ -24,7 +24,7 @@
             </div>
             </div>
             <div class="col-md-6">
-                <div class="card player2">
+                <div class="card player2 display_none">
                     <div style="width: 100%; min-height: 55vh; background-image: url('{{ asset($image2->filename) }}'); background-size:cover;"></div>
                     <div class="card-body">
                         <div class="row">
