@@ -1,5 +1,14 @@
 @extends('index')
 @section('content')
+    @if($image1->isEmpty() && $image2->isEmpty())
+        <div class="center">
+            <div class="vertical-center">
+                <h1>No Images Found</h1>
+                <p>Please upload some images to the database</p>
+            </div>
+        </div>
+    @else
+        
     <form action="/gameUpdate/" method="POST">
        
         @csrf
@@ -49,4 +58,5 @@
                 </div>
             </div>
     </form>
+    @endif
 @endsection
