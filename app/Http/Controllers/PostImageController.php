@@ -23,4 +23,8 @@ class PostImageController extends Controller
        $images->save();
        return redirect('/images/create')->with('slug', $slug);
     }
+    public function gameUpdate(Request $request){
+       
+       return redirect()->back();
+    }
 }

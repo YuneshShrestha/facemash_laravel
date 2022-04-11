@@ -1,13 +1,14 @@
 @extends('index')
 @section('content')
-    <div class="center">
-       @if (session('slug'))
-            <div class="alert alert-success">
-               Your data is saved with unique title {{ session('slug') }}.
-            </div>
-       @endif           
+    <div class="center mt-3">
+                
         <div class="card">
             <div class="card-body justify-content-center align-items-center">
+                @if (session('slug'))
+                        <div class="alert alert-success">
+                        Your data is saved with unique title {{ session('slug') }}.
+                        </div>
+                @endif 
                 <form action="/upload" method="POST" enctype="multipart/form-data">
                     @csrf
                     {{-- {{ method_field('PUT') }} --}}

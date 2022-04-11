@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
@@ -13,7 +14,20 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $count = Image::count();
+        $num1 = rand(1, $count);
+        $num2 = rand(1, $count);
+        if($num1 == $num2){
+            if($num2 == $count){
+                $num2 = $num2 - 1;
+           }
+           else{
+                $num2 = $num2 + 1;
+           }
+        }
+        $image1 = Image::where('id', $num1)->first();
+        $image2 = Image::where('id', $num2)->first();
+        return view('pages.main', compact('image1', 'image2'));
     }
 
     /**
@@ -24,6 +38,9 @@ class ImageController extends Controller
     public function create()
     {
         return view('pages.upload');
+    }
+    public function gameScore(){
+
     }
 
     /**

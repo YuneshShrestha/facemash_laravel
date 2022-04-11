@@ -1,4 +1,47 @@
 @extends('index')
 @section('content')
-    <h2>This Is Home</h2>
+    <form action="/gameUpdate/" method="POST">
+        @method('put')
+        @csrf
+        <div class="row vertical-center">
+            <div class="col-md-6">
+                <div class="card player1">
+                    <div style="width: 100%; min-height: 55vh; background-image: url('{{ asset($image1->filename) }}'); background-size:cover;"></div>
+                    
+                    <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p style="font-size: 18px;">{{ $image1->title }}</p>
+                            <p class="text-secondary">Score:{{ $image1->score }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="submit" style="background-color: transparent; float:right; border:none;" class="like1">
+                                <i class="fa-regular fa-heart" style="font-size: 30px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card player2">
+                    <div style="width: 100%; min-height: 55vh; background-image: url('{{ asset($image2->filename) }}'); background-size:cover;"></div>
+                    <div class="card-body">
+                        <div class="row">
+                        <div class="col-md-6">
+                            <p style="font-size: 18px;">{{ $image2->title }}</p>
+                            <p class="text-secondary">Score:{{ $image2->score }}</p>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <button type="submit" style="background-color: transparent; float:right; border:none;" class="like2">
+                                <i class="fa-regular fa-heart" style="font-size: 30px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </div>
+    </form>
 @endsection
