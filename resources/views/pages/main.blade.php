@@ -1,6 +1,6 @@
 @extends('index')
 @section('content')
-    @if($image1->isEmpty() && $image2->isEmpty())
+    @if(!($image1->isNotEmpty()) && !($image2->isNotEmpty()))
         <div class="center">
             <div class="vertical-center">
                 <h1>No Images Found</h1>
