@@ -77,29 +77,24 @@
           $('.like2').click(function(){
               $('.like2 i').removeClass('fa-regular fa-heart');
               $('.like2 i').addClass('fa-solid fa-heart');
+              $('.winner_id').val($('.player2_id').text());
+              $('.looser_id').val($('.player1_id').text());
               $('.like2 i').css('color', 'red');
-              // $('.like1 i').removeClass('fa-solid fa-heart');
-              // $('.like1 i').addClass('fa-regular fa-heart');
-              // $('.like1 i').css('color', '');
               $('.player1').fadeOut(300);
               $('.player2').fadeOut(300);
+          
+
           });
           $('.like1').click(function(){
               $('.like1 i').removeClass('fa-regular fa-heart');
               $('.like1 i').addClass('fa-solid fa-heart');
+              $('.winner_id').val($('.player1_id').text());
+              $('.looser_id').val($('.player2_id').text());
               $('.like1 i').css('color', 'red');
-              // $('.like2 i').removeClass('fa-solid fa-heart');
-              // $('.like2 i').addClass('fa-regular fa-heart');
-              // $('.like2 i').css('color', '');
               $('.player1').fadeOut(300);
               $('.player2').fadeOut(300);
           });
         });
     </script>
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
   </body>
 </html>

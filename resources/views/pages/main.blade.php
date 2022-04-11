@@ -1,8 +1,11 @@
 @extends('index')
 @section('content')
     <form action="/gameUpdate/" method="POST">
-        @method('put')
+       
         @csrf
+         @method('put')
+        <input type="text" class="winner_id" name="winner_id" hidden>
+        <input type="text" class="looser_id" name="looser_id" hidden>
         <div class="row vertical-center">
             <div class="col-md-6">
                 <div class="card player1 display_none">
@@ -11,6 +14,7 @@
                     <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
+                            <p class="player1_id d-none">{{ $image1->id }}</p>
                             <p style="font-size: 18px;">{{ $image1->title }}</p>
                             <p class="text-secondary">Score:{{ $image1->score }}</p>
                         </div>
@@ -29,6 +33,7 @@
                     <div class="card-body">
                         <div class="row">
                         <div class="col-md-6">
+                            <p class="player2_id d-none">{{ $image2->id }}</p>
                             <p style="font-size: 18px;">{{ $image2->title }}</p>
                             <p class="text-secondary">Score:{{ $image2->score }}</p>
                             
