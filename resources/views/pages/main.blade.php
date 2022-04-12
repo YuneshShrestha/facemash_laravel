@@ -11,8 +11,7 @@
             </div>
         </div>
     @else        
-    {{--  --}}
-        <form action="/gameUpdate/" method="POST">
+        <form action="images/1" method="POST">
             @csrf
             @method('put')
             <input type="text" class="winner_id" name="winner_id" hidden>
