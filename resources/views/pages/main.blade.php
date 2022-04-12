@@ -64,31 +64,38 @@
    </div>
    <div class="mt-2">
        <p>Top Images:</p>
-       <div class="top_items_flex">
-           @foreach ($topimages as $count=>$item)
-                <div class="card mb-3">
-                    <div class="row g-0">
-                    <div class="col-4">
-                        <img src="{{  asset($item->filename) }}" class="img-fluid rounded-start" alt="img" style="height: 140px; object-fit: cover; width: 100%;">
-                    </div>
-                    <div class="col-8">
-                        <div class="card-body" >
-                            <h5 class="card-title">{{ $item->title }}</h5>
-                            
-                            <p class="card-text text-secondary" style="font-size: 14px;">
-                                Rank: {{ ++$count }}<br>
-                                Score: {{ $item->score }} <br>
-                                Wins: {{ $item->wins }} <br>
-                                Losses: {{ $item->losses }} 
-                            </p>
-                        
+       {{-- <p>{{ $topimages }}</p> --}}
+       @if($topimages->isEmpty())
+        <div class="text-center">
+            <p>Sorry Images Cannot Be Ranked.</p>
+        </div>
+            
+       @else
+            <div class="top_items_flex">
+                @foreach ($topimages as $count=>$item)
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                            <div class="col-4">
+                                <img src="{{  asset($item->filename) }}" class="img-fluid rounded-start" alt="img" style="height: 140px; object-fit: cover; width: 100%;">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body" >
+                                    <h5 class="card-title">{{ $item->title }}</h5>
+                                    
+                                    <p class="card-text text-secondary" style="font-size: 14px;">
+                                        Position: {{ ++$count }}<br>
+                                        Score: {{ $item->score }} <br>
+                                        Wins: {{ $item->wins }} <br>
+                                        Losses: {{ $item->losses }} 
+                                    </p>
+                                
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                    </div>
-                    </div>
-                </div>
-                <div style="width: 10px;"></div>
-           @endforeach
-       </div>
-       
+                        <div style="width: 10px;"></div>
+                @endforeach
+            </div>
+       @endif
    </div>
 @endsection

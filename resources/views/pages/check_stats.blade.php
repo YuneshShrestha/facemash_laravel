@@ -12,7 +12,7 @@
         </div>
     @else
         <div class="stats_flex">
-            @foreach ($image as $count=>$item)
+            @foreach ($image as $item)
                     <div class="card mb-3">
                             <div class="row g-0">
                             <div class="col-4">
@@ -23,7 +23,7 @@
                                     <h5 class="card-title">{{ $item->title }}</h5>
                                     
                                     <p class="card-text text-secondary" style="font-size: 14px;">
-                                        Rank: {{ ++$count }}<br>
+                                        Rank: {{ $item->rank }}<br>
                                         Score: {{ $item->score }} <br>
                                         Wins: {{ $item->wins }} <br>
                                         Losses: {{ $item->losses }} 

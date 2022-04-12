@@ -28,7 +28,7 @@ class ImageController extends Controller
         }
         $image1 = Image::where('id', $num1)->first();
         $image2 = Image::where('id', $num2)->first();
-        $topimages = Image::orderBy('rank','desc')->take(3)->get();
+        $topimages = Image::orderBy('rank','desc')->where('rank','>',0)->take(3)->get();
         return view('pages.main', compact('image1', 'image2','topimages'));
     }
 
