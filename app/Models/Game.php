@@ -30,6 +30,6 @@ class Game extends Model
         if($score==0 || $wins==0 || $losses==0){
             return 0;
         }
-        return (int)($score / (1+($losses/$wins)));
+        return (int)($score / (1+(($losses+1)/$wins)));
     }
 }

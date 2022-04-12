@@ -11,16 +11,14 @@
             </div>
         </div>
     @else
-        <div>
-            <div class="row gy-2">
+        <div class="stats_flex">
             @foreach ($image as $count=>$item)
-                <div class="col-md-6">
-                    <div class="card mb-3" style="max-width: 540px; height: 140px;">
+                    <div class="card mb-3">
                             <div class="row g-0">
-                            <div class="col-md-4">
+                            <div class="col-4">
                                 <img src="{{  asset($item->filename) }}" class="img-fluid rounded-start" alt="img" style="height: 140px; object-fit: cover; width: 100%;">
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-8">
                                 <div class="card-body" >
                                     <h5 class="card-title">{{ $item->title }}</h5>
                                     
@@ -35,10 +33,10 @@
                             </div>
                             </div>
                         </div>
-                    </div>
+                        <div style="width: 10px"></div>
 
             @endforeach
-        </div>
+        
         </div>
     @endif
 @endsection
