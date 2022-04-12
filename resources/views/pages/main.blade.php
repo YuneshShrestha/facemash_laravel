@@ -11,6 +11,7 @@
             </div>
         </div>
     @else        
+    {{--  --}}
         <form action="/gameUpdate/" method="POST">
             @csrf
             @method('put')

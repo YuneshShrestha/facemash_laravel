@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 // Route::model('images','App\Models\Image');
 Route::get('/', [ImageController::class,'index']);
 Route::post('/upload', [PostImageController::class, 'upload']);
-Route::match(['put', 'patch'], '/gameUpdate',[PostImageController::class, 'gameUpdate']);
+Route::put('/gameUpdate',[PostImageController::class, 'gameUpdate']);
 // Route::put('', );
 Route::get('/check_stats', [ImageController::class, 'checkStats']);
 Route::resource('/images', ImageController::class);
