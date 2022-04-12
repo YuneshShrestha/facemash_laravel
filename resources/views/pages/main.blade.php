@@ -1,7 +1,7 @@
 @extends('index')
 @section('content')
     
-    @if(empty($image1) && empty($image2))
+    @if(empty($image1 && $image2) )
         <div>
             <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
                 <div>
