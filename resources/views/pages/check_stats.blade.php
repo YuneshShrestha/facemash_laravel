@@ -2,6 +2,16 @@
 @section('content')
     {{-- <p>Arra</p> --}}
     <div class="row gy-2">
+        @if(empty($image1 && $image2) )
+        <div>
+            <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
+                <div>
+                    <h1>No Images Found</h1><br>
+                    <p>Please upload some images to the database</p>
+                </div>
+            </div>
+        </div>
+        @else
         @foreach ($image as $item)
             <div class="col-md-6">
                 <div class="card mb-3" style="max-width: 540px; height: 120px;">
@@ -26,6 +36,7 @@
                 </div>
 
         @endforeach
+        @endif
     </div>
     
 @endsection
