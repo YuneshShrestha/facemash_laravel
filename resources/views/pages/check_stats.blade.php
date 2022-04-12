@@ -2,7 +2,7 @@
 @section('content')
     {{-- <p>Arra</p> --}}
     <div class="row gy-2">
-        @if(empty($image1 && $image2) )
+        @if(empty($image) )
         <div>
             <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
                 <div>
