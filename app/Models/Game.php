@@ -16,12 +16,12 @@ class Game extends Model
 
     public static function win($rating, $expected)
     {
-        return $rating + 32*(1-$expected); 
+        return (int)($rating + 32*(1-$expected)); 
     }
 
     public static function loss($rating, $expected)
     {
-        return $rating + 32*(0-$expected); 
+        return (int)($rating + 32*(0-$expected)); 
     }
 
   
@@ -30,6 +30,6 @@ class Game extends Model
         if($score==0 || $wins==0 || $losses==0){
             return 0;
         }
-        return round($score / (1+($losses/$wins)));
+        return (int)($score / (1+($losses/$wins)));
     }
 }
