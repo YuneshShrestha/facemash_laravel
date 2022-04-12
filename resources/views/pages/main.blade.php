@@ -79,15 +79,33 @@
                                 <img src="{{  asset($item->filename) }}" class="img-fluid rounded-start" alt="img" style="height: 140px; object-fit: cover; width: 100%;">
                             </div>
                             <div class="col-8">
-                                <div class="card-body" >
+                                <div class="card-body" >    
                                     <h5 class="card-title">{{ $item->title }}</h5>
                                     
                                     <p class="card-text text-secondary" style="font-size: 14px;">
-                                        Position: {{ ++$count }}<br>
-                                        Score: {{ $item->score }} <br>
-                                        Wins: {{ $item->wins }} <br>
-                                        Losses: {{ $item->losses }} 
+                                        @if($count==0)
+                                            <?php 
+                                                $score = 0;
+                                                $wins = 0;
+                                                $losses = 0;
+                                                $count = $count+1;
+                                            ?>
+                                        @elseif ($item->score!=$score || $item->wins!=$wins || $item->losses!=$losses)
+                                            <?php
+                                                $count = $count+1;
+                                            ?>
+                                        @endif
+                                            Position: {{$count }}<br>
+                                            Score: {{ $item->score }} <br>
+                                            Wins: {{ $item->wins }} <br>
+                                            Losses: {{ $item->losses }} 
+                                       
                                     </p>
+                                    <?php 
+                                        $score = $item->score;
+                                        $wins = $item->wins;
+                                        $losses = $item->losses;
+                                    ?>
                                 
                                 </div>
                             </div>
