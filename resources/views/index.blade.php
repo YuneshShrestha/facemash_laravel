@@ -36,6 +36,7 @@
           align-items: center;
           min-height: 85vh;
         }
+        
     </style>
   </head>
   <body>
