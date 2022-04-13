@@ -66,7 +66,7 @@
        <p>Top Images:</p>
        {{-- <p>{{ $topimages }}</p> --}}
        @if($topimages->isEmpty())
-        <div class="text-center">
+        <div class="text-md-center">
             <p>Sorry Images Cannot Be Ranked.</p>
         </div>
             
