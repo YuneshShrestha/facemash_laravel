@@ -27,7 +27,7 @@ class Game extends Model
   
     public function rank($score, $losses, $wins)
     {
-        if($score==0 || $wins==0){
+        if($score==0 || $wins==0 || $losses==0){
             return 0;
         }
         return (int)($score / (1+($losses/$wins)));

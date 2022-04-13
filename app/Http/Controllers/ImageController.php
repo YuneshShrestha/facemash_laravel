@@ -94,16 +94,19 @@ class ImageController extends Controller
       //  return $winner_image;
        $winner_image->wins = $winner_image->wins + 1;
        $losser_image->losses = $losser_image->losses + 1;
-       $expected = $game->expected($winner_image->score, $losser_image->score);
-       $winner_image->score = $game->win($winner_image->score, $expected);
-       $losser_image->score = $game->loss($losser_image->score, $expected);
-       $winner_rank = $game->rank($winner_image->score, $winner_image->losses, $winner_image->wins);
-       $losser_rank = $game->rank($losser_image->score, $losser_image->losses, $losser_image->wins);
+       $winner_expected = $game->expected($losser_image->score, $winner_image->score);
+       $looser_expected = $game->expected($winner_image->score, $losser_image->score);
+       $winner_new_score = $game->win($winner_image->score, $winner_expected);
+       $looser_new_score = $game->loss($losser_image->score, $looser_expected);
+       $winner_image->score = $winner_new_score;
+       $losser_image->score = $looser_new_score;
+       $winner_rank = $game->rank($winner_new_score, $winner_image->losses + 1, $winner_image->wins);
+       $losser_rank = $game->rank($looser_new_score, $losser_image->losses + 1, $losser_image->wins);
        $winner_image->rank = $winner_rank;
        $losser_image->rank = $losser_rank;
-       $winner_image->save();
-      $losser_image->save();
-      return redirect()->back();
+       $winner_image->update();
+       $losser_image->update();
+       return redirect()->back();
     }
 
     /**

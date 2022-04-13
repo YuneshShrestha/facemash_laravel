@@ -24,23 +24,29 @@ class PostImageController extends Controller
        $images->save();
        return redirect('/images/create')->with('slug', $slug);
     }
-    public function gameUpdate(Request $request){
-       $game = new Game();
-       $losser_image = Image::find($request->looser_id);
+   //  public function gameUpdate(Request $request){
+   //     $game = new Game();
+   //     $losser_image = Image::find($request->looser_id);
 
-       $winner_image = Image::find($request->winner_id);
-      //  return $winner_image;
-       $winner_image->wins = $winner_image->wins + 1;
-       $losser_image->losses = $losser_image->losses + 1;
-       $expected = $game->expected($winner_image->score, $losser_image->score);
-       $winner_image->score = $game->win($winner_image->score, $expected);
-       $losser_image->score = $game->loss($losser_image->score, $expected);
-       $winner_rank = $game->rank($winner_image->score, $winner_image->losses, $winner_image->wins);
-       $losser_rank = $game->rank($losser_image->score, $losser_image->losses, $losser_image->wins);
-       $winner_image->rank = $winner_rank;
-       $losser_image->rank = $losser_rank;
-       $winner_image->save();
-      $losser_image->save();
-       return redirect()->back();
-    }
+   //     $winner_image = Image::find($request->winner_id);
+   //    //  return $winner_image;
+   //     $winner_image->wins = $winner_image->wins + 1;
+   //     $losser_image->losses = $losser_image->losses + 1;
+   //     $winner_expected = $game->expected($losser_image->score, $winner_image->score);
+   //     $looser_expected = $game->expected($winner_image->score, $losser_image->score);
+
+   //     $winner_new_score = $game->win($winner_image->score, $winner_expected);
+   //     $winner_image->score = $winner_new_score;
+
+   //     $looser_new_score = $game->loss($losser_image->score, $looser_expected);
+   //     $losser_image->score = $looser_new_score;
+   //     dd($winner_new_score, $looser_new_score,$game->win($losser_image->score, $looser_expected));
+   //     $winner_rank = $game->rank($winner_image->score, $winner_image->losses + 1, $winner_image->wins);
+   //     $losser_rank = $game->rank($losser_image->score, $losser_image->losses + 1, $losser_image->wins);
+   //     $winner_image->rank = $winner_rank;
+   //     $losser_image->rank = $losser_rank;
+   //     $winner_image->save();
+   //    $losser_image->save();
+   //     return redirect()->back();
+   //  }
 }
