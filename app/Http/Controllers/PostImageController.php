@@ -16,11 +16,6 @@ class PostImageController extends Controller
             'image' => 'required|mimes:jpeg,png,jpg',
             'name' => 'required',
         ]);
-        $imageName = time().'.'.$request->image->getClientOriginalExtension();
-        $request->image->move(public_path('images'), $imageName);
-        $images->image = $imageName;
-        $images->save();
-        return redirect('/')->with('success', 'Image Uploaded successfully'); 
        if($request->hasFile('image')){
             $temp = $request->image;
             $name =  time() . $temp->getClientOriginalName();
