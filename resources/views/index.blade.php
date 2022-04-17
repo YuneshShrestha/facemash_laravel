@@ -55,7 +55,7 @@
           width: 360px;
           height: 140px;
         }
-
+        
         @media screen and (max-width: 800px) {
           .stats_flex{
             display: flex;

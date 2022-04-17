@@ -15,10 +15,16 @@
                     <div class="form-group mb-2">
                         <label for="name">Image Name:</label>
                         <input id="name" class="form-control" type="text" name="name">
+                        @error('name')
+                            <p class="text-danger" style="font-size: 12px;">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="form-group mb-2">
                         <label for="image">Upload Image:</label>
                         <input id="image" class="form-control-file" type="file" name="image">
+                        @error('image')
+                            <p class="text-danger" style="font-size: 12px;">{{ $message }}</p>
+                        @enderror   
                     </div>
                     <button type="submit" class="btn btn-primary">Upload</button>
     
