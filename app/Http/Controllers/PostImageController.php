@@ -13,7 +13,7 @@ class PostImageController extends Controller
     public function upload(Request $request){
        $images = new Image();
        $request->validate([
-            'image' => 'required|mimes:jpeg,png,jpg',
+            'image' => 'required|max:2048|mimes:jpeg,png,jpg',
             'name' => 'required',
         ]);
        if($request->hasFile('image')){
